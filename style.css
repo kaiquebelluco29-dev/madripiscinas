@@ -200,7 +200,7 @@ a:focus-visible, button:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 84px;
   gap: 20px;
 }
 
@@ -209,7 +209,7 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   flex-shrink: 0;
 }
-.logo__img { height: 64px; width: auto; }
+.logo__img { height: 80px; width: auto; }
 .logo--footer .logo__img { height: 56px; }
 
 .nav {
@@ -243,7 +243,7 @@ a:focus-visible, button:focus-visible {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top: 76px;
+  top: 84px;
   left: 0; right: 0;
   background: var(--navy-900);
   padding: 20px 24px 28px;
