@@ -24,59 +24,59 @@ function buildWhatsAppLink(message) {
    originais, criados para esta landing page. */
 const MODELOS_PISCINA = [
   {
-    nome: 'Modelo Toledo',
-    medidas: '3,00 x 2,00 x 1,20 m',
-    descricao: 'Compacta e elegante, ideal para quintais pequenos e áreas de lazer reduzidas.',
+    nome: 'Modelo Canadá',
+    medidas: 'de 3 a 10 metros',
+    descricao: 'Linha Canadá une design moderno, excelente área interna e escadas ergonômicas que valorizam conforto e praticidade.',
     destaque: 'Compacta',
-    imagem: 'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/linha-canada.png'
   },
   {
-    nome: 'Modelo Sevilha',
-    medidas: '4,50 x 2,50 x 1,30 m',
-    descricao: 'Formato retangular clássico, com ótimo custo-benefício para famílias pequenas.',
+    nome: 'Modelo Espanha',
+    medidas: 'de 4 a 7 metros',
+    descricao: 'Com design moderno e escada integrada, oferece conforto, praticidade e um visual clean que valoriza qualquer ambiente.',
     destaque: 'Mais vendida',
-    imagem: 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/Linha-espanha.png'
   },
   {
-    nome: 'Modelo Valência',
-    medidas: '6,00 x 3,00 x 1,40 m',
-    descricao: 'Tamanho padrão de mercado, com espaço confortável para toda a família nadar e relaxar.',
+    nome: 'Modelo Portugal',
+    medidas: 'de 3 a 8 metros',
+    descricao: 'Linha Portugal combina design atemporal, excelente profundidade e ótimo aproveitamento interno. Com escadas integradas e formato versátil.',
     destaque: 'Padrão',
-    imagem: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/linha-portugal.png'
   },
   {
-    nome: 'Modelo Barcelona',
-    medidas: '7,00 x 3,50 x 1,50 m',
-    descricao: 'Design moderno com prainha de descanso, perfeita para receber amigos e crianças.',
+    nome: 'Modelo Grécia',
+    medidas: 'de 4 a 10 metros',
+    descricao: 'Linha Grécia é a expressão máxima de elegância e acabamento premium. Com revestimento em pastilhas de vidro ou porcelana.',
     destaque: 'Com prainha',
-    imagem: 'https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/Linha-grecia.png'
   },
   {
-    nome: 'Modelo Málaga',
-    medidas: '8,00 x 4,00 x 1,60 m',
-    descricao: 'Espaço amplo com área de hidromassagem integrada para momentos de relaxamento.',
+    nome: 'Modelo Caribe',
+    medidas: 'de 5 a 7 metros',
+    descricao: 'Linha Caribe combina lazer e sofisticação em um único projeto. Com spa integrado, design elegante e excelente área interna.',
     destaque: 'Com hidro',
-    imagem: 'https://images.unsplash.com/photo-1600607687644-c7531e489ece?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/linha-caribe.png'
   },
   {
-    nome: 'Modelo Granada',
-    medidas: '10,00 x 4,50 x 1,70 m',
-    descricao: 'O modelo mais completo da linha, com cascata, LED e acabamento premium de fábrica.',
+    nome: 'Modelo Itália',
+    medidas: 'de 5 a 6 metros',
+    descricao: 'Seu formato moderno e escadas amplas oferecem conforto, praticidade e um visual elegante que valoriza qualquer projeto.',
     destaque: 'Linha premium',
-    imagem: 'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=700&q=80'
+    imagem: 'assets/linha-italia.png'
   }
 ];
 
 /* =========================== DADOS: GALERIA =========================== */
 const GALERIA_IMAGENS = [
-  'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1582610116397-edb318620f90?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1600607687644-c7531e489ece?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1600585152220-90363fe7e115?auto=format&fit=crop&w=600&q=80',
-  'https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=600&q=80'
+  'assets/galeria-1.jpg.png',
+  'assets/galeria-2.jpg.png',
+  'assets/galeria-3.jpg.png',
+  'assets/galeria-4.jpg.png',
+  'assets/galeria-5.jpg.png',
+  'assets/galeria-6.jpg.png',
+  'assets/galeria-7.jpg.png',
+  'assets/galeria-8.jpg.png'
 ];
 
 /* =========================== ÍCONE PADRÃO DE FALLBACK =========================== */
@@ -265,6 +265,26 @@ function observeRevealElements() {
   });
 }
 
+/* =========================== VÍDEO DO HERO (play/pause + som) =========================== */
+function setupHeroVideoToggle() {
+  const video = document.querySelector('.hero__visual-video');
+  const toggle = document.getElementById('heroVideoToggle');
+  if (!video || !toggle) return;
+
+  const sync = () => toggle.classList.toggle('is-playing', !video.paused);
+  toggle.addEventListener('click', () => {
+    if (video.paused) {
+      video.muted = false;
+      video.play();
+    } else {
+      video.pause();
+    }
+  });
+  video.addEventListener('play', sync);
+  video.addEventListener('pause', sync);
+  sync();
+}
+
 /* =========================== ANO ATUAL NO RODAPÉ =========================== */
 function setupFooterYear() {
   const yearEl = document.getElementById('year');
@@ -280,5 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupHeaderScroll();
   setupMobileNav();
   setupFooterYear();
+  setupHeroVideoToggle();
   observeRevealElements();
 });

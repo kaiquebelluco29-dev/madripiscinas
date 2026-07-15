@@ -22,7 +22,11 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- ==================== Favicon ==================== -->
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F5C8C'/%3E%3Cpath d='M10 40c4-4 8-4 12 0s8 4 12 0 8-4 12 0 8 4 8 4' stroke='%23ffffff' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Cpath d='M10 50c4-4 8-4 12 0s8 4 12 0 8-4 12 0 8 4 8 4' stroke='%23F0B429' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="icon" href="assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/favicon-48x48.png">
+  <link rel="shortcut icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 
   <!-- ==================== Performance: preconnect ==================== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,6 +68,17 @@
   <section class="hero" id="hero">
     <div class="hero__blob hero__blob--1" aria-hidden="true"></div>
     <div class="hero__blob hero__blob--2" aria-hidden="true"></div>
+    <div class="hero__blob hero__blob--3" aria-hidden="true"></div>
+
+    <div class="hero__ripple hero__ripple--1" aria-hidden="true"></div>
+    <div class="hero__ripple hero__ripple--2" aria-hidden="true"></div>
+    <div class="hero__ripple hero__ripple--3" aria-hidden="true"></div>
+
+    <span class="hero__bubble hero__bubble--1" aria-hidden="true"></span>
+    <span class="hero__bubble hero__bubble--2" aria-hidden="true"></span>
+    <span class="hero__bubble hero__bubble--3" aria-hidden="true"></span>
+    <span class="hero__bubble hero__bubble--4" aria-hidden="true"></span>
+    <span class="hero__bubble hero__bubble--5" aria-hidden="true"></span>
 
     <div class="container hero__grid">
       <div class="hero__content">
@@ -73,11 +88,11 @@
           Modelos de 3 até 10 metros. Parcelamento facilitado. Atendimento especializado.
         </p>
         <div class="hero__actions" data-reveal>
-          <a href="https://wa.me/5515998888699?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20piscina." class="btn btn--gold btn--lg" target="_blank" rel="noopener">
+          <a href="https://wa.me/5515998888699?text=Ol%C3%A1!%20Quero%20solicitar%20um%20or%C3%A7amento%20de%20piscina." class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1s-.7.8-.9 1c-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-2-1.2 7.4 7.4 0 0 1-1.4-1.7c-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.3-.5s0-.4 0-.5c0-.2-.6-1.5-.9-2-.2-.5-.5-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.3c0 1.3.9 2.6 1.1 2.8.1.2 2 3 4.7 4.2a15 15 0 0 0 1.6.6 3.8 3.8 0 0 0 1.7.1c.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2s-.2-.2-.4-.3z"/></svg>
             Solicitar orçamento pelo WhatsApp
           </a>
-          <a href="#modelos" class="btn btn--ghost">Ver modelos de piscina</a>
+          <a href="#modelos" class="btn btn--gold">Ver modelos de piscina</a>
         </div>
 
         <ul class="hero__stats" data-reveal>
@@ -88,14 +103,21 @@
       </div>
 
       <div class="hero__visual" data-reveal>
-        <img src="assets/cascos-piscinas.png" alt="Diversos modelos e formatos de cascos de piscina de fibra Madri Piscinas" class="hero__visual-cascos" loading="eager" width="686" height="487">
-        <video
-          class="hero__visual-video"
-          src="assets/hero-video.mp4"
-          poster="assets/video-poster.jpg"
-          aria-label="Vídeo institucional Madri Piscinas"
-          autoplay muted loop playsinline preload="auto">
-        </video>
+        <div class="hero-video-card">
+          <div class="hero-video-card__frame">
+            <video
+              class="hero__visual-video"
+              src="assets/hero-video.mp4"
+              poster="assets/video-poster.jpg"
+              aria-label="Vídeo institucional Madri Piscinas"
+              autoplay muted loop playsinline preload="auto">
+            </video>
+            <button type="button" class="hero-video-card__play" id="heroVideoToggle" aria-label="Ativar som do vídeo">
+              <svg class="icon-play" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="icon-pause" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5h4v14H7zm6 0h4v14h-4z"/></svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -105,14 +127,23 @@
   </section>
 
   <!-- ==================== BENEFÍCIOS ==================== -->
-  <section class="section" id="beneficios">
+  <section class="section beneficios" id="beneficios">
+    <div class="beneficios__glow" aria-hidden="true"></div>
+    <div class="beneficios__blob beneficios__blob--1" aria-hidden="true"></div>
+    <div class="beneficios__blob beneficios__blob--2" aria-hidden="true"></div>
+    <span class="beneficios__particle beneficios__particle--1" aria-hidden="true"></span>
+    <span class="beneficios__particle beneficios__particle--2" aria-hidden="true"></span>
+    <span class="beneficios__particle beneficios__particle--3" aria-hidden="true"></span>
+    <span class="beneficios__particle beneficios__particle--4" aria-hidden="true"></span>
+    <span class="beneficios__particle beneficios__particle--5" aria-hidden="true"></span>
+
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Por que escolher a Madri</p>
-        <h2>Qualidade que se vê, confiança que se sente</h2>
+        <h2>Qualidade que se vê, <span class="text-highlight-gold">confiança que se sente</span></h2>
       </div>
 
-      <div class="grid grid--4">
+      <div class="grid grid--4 beneficios__grid">
         <article class="card-benefit" data-reveal>
           <span class="icon-badge">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 16.5c2 2 4 2 6 0s4-2 6 0 4 2 6 0" stroke-linecap="round"/><path d="M3 20c2 2 4 2 6 0s4-2 6 0 4 2 6 0" stroke-linecap="round"/><path d="M12 3v9M8 8l4-5 4 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -153,7 +184,7 @@
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Catálogo de modelos</p>
-        <h2>Encontre o formato ideal para o seu espaço</h2>
+        <h2>Encontre o <span class="text-highlight-gold">formato ideal</span> para o seu espaço</h2>
         <p class="section__desc">Modelos inspirados no catálogo oficial da rede Madri Piscinas, de mini piscinas a espaços completos de lazer.</p>
       </div>
 
@@ -165,10 +196,19 @@
 
   <!-- ==================== DIFERENCIAIS ==================== -->
   <section class="section" id="diferenciais">
+    <div class="section__glow" aria-hidden="true"></div>
+    <div class="section__blob section__blob--1" aria-hidden="true"></div>
+    <div class="section__blob section__blob--2" aria-hidden="true"></div>
+    <span class="section__particle section__particle--1" aria-hidden="true"></span>
+    <span class="section__particle section__particle--2" aria-hidden="true"></span>
+    <span class="section__particle section__particle--3" aria-hidden="true"></span>
+    <span class="section__particle section__particle--4" aria-hidden="true"></span>
+    <span class="section__particle section__particle--5" aria-hidden="true"></span>
+
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Diferenciais Madri</p>
-        <h2>Detalhes que transformam sua piscina em um espaço único</h2>
+        <h2>Detalhes que transformam sua piscina em um <span class="text-highlight-gold">espaço único</span></h2>
       </div>
 
       <div class="grid grid--4 grid--diff">
@@ -210,6 +250,15 @@
 
   <!-- ==================== GALERIA ==================== -->
   <section class="section section--tint" id="galeria">
+    <div class="section__glow" aria-hidden="true"></div>
+    <div class="section__blob section__blob--1" aria-hidden="true"></div>
+    <div class="section__blob section__blob--2" aria-hidden="true"></div>
+    <span class="section__particle section__particle--1" aria-hidden="true"></span>
+    <span class="section__particle section__particle--2" aria-hidden="true"></span>
+    <span class="section__particle section__particle--3" aria-hidden="true"></span>
+    <span class="section__particle section__particle--4" aria-hidden="true"></span>
+    <span class="section__particle section__particle--5" aria-hidden="true"></span>
+
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Galeria</p>
@@ -224,13 +273,23 @@
 
   <!-- ==================== COMO FUNCIONA ==================== -->
   <section class="section" id="como-funciona">
+    <div class="section__glow" aria-hidden="true"></div>
+    <div class="section__blob section__blob--1" aria-hidden="true"></div>
+    <div class="section__blob section__blob--2" aria-hidden="true"></div>
+    <span class="section__particle section__particle--1" aria-hidden="true"></span>
+    <span class="section__particle section__particle--2" aria-hidden="true"></span>
+    <span class="section__particle section__particle--3" aria-hidden="true"></span>
+    <span class="section__particle section__particle--4" aria-hidden="true"></span>
+    <span class="section__particle section__particle--5" aria-hidden="true"></span>
+
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Processo simples</p>
         <h2>Como funciona</h2>
       </div>
 
-      <div class="steps">
+      <div class="steps" data-reveal>
+        <div class="steps__line" aria-hidden="true"><span class="steps__line-fill"></span></div>
         <div class="step" data-reveal>
           <span class="step__number">1</span>
           <h3>Escolha seu modelo</h3>
@@ -257,6 +316,15 @@
 
   <!-- ==================== DEPOIMENTOS ==================== -->
   <section class="section section--tint" id="depoimentos">
+    <div class="section__glow" aria-hidden="true"></div>
+    <div class="section__blob section__blob--1" aria-hidden="true"></div>
+    <div class="section__blob section__blob--2" aria-hidden="true"></div>
+    <span class="section__particle section__particle--1" aria-hidden="true"></span>
+    <span class="section__particle section__particle--2" aria-hidden="true"></span>
+    <span class="section__particle section__particle--3" aria-hidden="true"></span>
+    <span class="section__particle section__particle--4" aria-hidden="true"></span>
+    <span class="section__particle section__particle--5" aria-hidden="true"></span>
+
     <div class="container">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Depoimentos</p>
@@ -269,7 +337,7 @@
           <p>"Atendimento excelente do início ao fim. A equipe explicou tudo com clareza e a instalação foi rápida."</p>
           <div class="review-card__author">
             <span class="avatar">R</span>
-            <div><strong>Ricardo A.</strong><span>Cliente Madri Piscinas</span></div>
+            <div><strong>Ricardo A.</strong><span>Cliente Madri Piscinas · Sorocaba <span style="white-space:nowrap">- SP</span></span></div>
           </div>
         </article>
 
@@ -278,16 +346,16 @@
           <p>"A piscina ficou linda, com ótimo acabamento. Recomendo para quem busca qualidade e confiança."</p>
           <div class="review-card__author">
             <span class="avatar">F</span>
-            <div><strong>Fernanda L.</strong><span>Cliente Madri Piscinas</span></div>
+            <div><strong>Fernanda L.</strong><span>Cliente Madri Piscinas · Campinas <span style="white-space:nowrap">- SP</span></span></div>
           </div>
         </article>
 
-        <article class="review-card review-card--placeholder" data-reveal>
-          <div class="review-card__stars" aria-label="Avaliações em breve">★★★★★</div>
-          <p>Este espaço está reservado para novas avaliações de clientes. Seja um dos primeiros a compartilhar sua experiência.</p>
+        <article class="review-card" data-reveal>
+          <div class="review-card__stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p>"Superou minhas expectativas. Equipe atenciosa do orçamento até a entrega, e o resultado ficou impecável."</p>
           <div class="review-card__author">
-            <span class="avatar">?</span>
-            <div><strong>Seu nome aqui</strong><span>Em breve</span></div>
+            <span class="avatar">M</span>
+            <div><strong>Maycon</strong><span>Cliente Madri Piscinas · Boituva <span style="white-space:nowrap">- SP</span></span></div>
           </div>
         </article>
       </div>
@@ -296,6 +364,15 @@
 
   <!-- ==================== FAQ ==================== -->
   <section class="section" id="faq">
+    <div class="section__glow" aria-hidden="true"></div>
+    <div class="section__blob section__blob--1" aria-hidden="true"></div>
+    <div class="section__blob section__blob--2" aria-hidden="true"></div>
+    <span class="section__particle section__particle--1" aria-hidden="true"></span>
+    <span class="section__particle section__particle--2" aria-hidden="true"></span>
+    <span class="section__particle section__particle--3" aria-hidden="true"></span>
+    <span class="section__particle section__particle--4" aria-hidden="true"></span>
+    <span class="section__particle section__particle--5" aria-hidden="true"></span>
+
     <div class="container container--narrow">
       <div class="section__head" data-reveal>
         <p class="eyebrow">Dúvidas frequentes</p>
@@ -370,6 +447,7 @@
 
   <!-- ==================== CTA FINAL ==================== -->
   <section class="cta-final">
+    <img src="assets/modelo-madri.png" alt="" class="cta-final__person" aria-hidden="true">
     <div class="container cta-final__inner" data-reveal>
       <h2>Solicite agora seu orçamento</h2>
       <p>Fale com nossa equipe e descubra o modelo perfeito para transformar seu quintal em um espaço de lazer.</p>
