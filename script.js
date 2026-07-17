@@ -343,6 +343,21 @@ function setupCookieConsent() {
   }
 }
 
+/* =========================== RASTREAMENTO: CLIQUES NO WHATSAPP ===========================
+   Dispara o evento padrão "Contact" do Meta Pixel em qualquer link de WhatsApp do site
+   (header, Hero, cards de modelos, CTA final, rodapé, botão flutuante). Usa delegação de
+   eventos em document, então cobre também os cards de modelos/galeria renderizados
+   dinamicamente. Só dispara se o Pixel já tiver sido carregado (visitante aceitou cookies). */
+function setupWhatsAppTracking() {
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href*="wa.me"]');
+    if (!link) return;
+    if (typeof fbq === 'function') {
+      fbq('track', 'Contact');
+    }
+  });
+}
+
 /* =========================== INICIALIZAÇÃO =========================== */
 document.addEventListener('DOMContentLoaded', () => {
   renderModelos();
@@ -354,5 +369,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupFooterYear();
   setupHeroVideoToggle();
   setupCookieConsent();
+  setupWhatsAppTracking();
   observeRevealElements();
 });
