@@ -291,6 +291,58 @@ function setupFooterYear() {
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 }
 
+/* =========================== CONSENTIMENTO DE COOKIES (LGPD) ===========================
+   O Meta Pixel só é carregado depois que o visitante aceita cookies não essenciais
+   (ou em visitas futuras, se a escolha guardada no navegador for "accepted").
+   Enquanto não houver decisão, ou se o visitante rejeitar, o pixel não é disparado. */
+const FB_PIXEL_ID = '1702415281001639';
+const COOKIE_CONSENT_KEY = 'madri_cookie_consent';
+
+function loadMetaPixel() {
+  if (window.fbq) return;
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', FB_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+
+function setupCookieConsent() {
+  const banner = document.getElementById('cookieBanner');
+  const stored = localStorage.getItem(COOKIE_CONSENT_KEY);
+
+  if (stored === 'accepted') {
+    loadMetaPixel();
+  } else if (!stored && banner) {
+    banner.classList.add('is-visible');
+  }
+
+  if (!banner) return;
+
+  const acceptBtn = document.getElementById('cookieAccept');
+  const rejectBtn = document.getElementById('cookieReject');
+
+  if (acceptBtn) {
+    acceptBtn.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted');
+      loadMetaPixel();
+      banner.classList.remove('is-visible');
+    });
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', () => {
+      localStorage.setItem(COOKIE_CONSENT_KEY, 'rejected');
+      banner.classList.remove('is-visible');
+    });
+  }
+}
+
 /* =========================== INICIALIZAÇÃO =========================== */
 document.addEventListener('DOMContentLoaded', () => {
   renderModelos();
@@ -301,5 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
   setupMobileNav();
   setupFooterYear();
   setupHeroVideoToggle();
+  setupCookieConsent();
   observeRevealElements();
 });

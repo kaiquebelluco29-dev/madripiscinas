@@ -36,23 +36,7 @@
 
   <link rel="stylesheet" href="style.css">
 
-  <!-- Meta Pixel Code -->
-  <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '1702415281001639');
-  fbq('track', 'PageView');
-  </script>
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=1702415281001639&ev=PageView&noscript=1"
-  /></noscript>
-  <!-- End Meta Pixel Code -->
+  <!-- Meta Pixel: carregado apenas após consentimento de cookies (ver script.js / banner LGPD) -->
 </head>
 <body>
 
@@ -496,6 +480,7 @@
         <p><a href="#modelos">Modelos</a></p>
         <p><a href="#diferenciais">Diferenciais</a></p>
         <p><a href="#faq">Dúvidas frequentes</a></p>
+        <p><a href="politica-de-privacidade.html">Política de Privacidade</a></p>
       </div>
 
       <div class="footer__col">
@@ -529,6 +514,20 @@
   <div class="lightbox" id="lightbox">
     <button class="lightbox__close" id="lightboxClose" aria-label="Fechar imagem">&times;</button>
     <img src="" alt="" id="lightboxImg">
+  </div>
+
+  <!-- ==================== BANNER DE COOKIES (LGPD) ==================== -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <div class="cookie-banner__inner">
+      <p>
+        Usamos cookies e o Meta Pixel para entender sua navegação e personalizar nossos anúncios no Facebook e Instagram.
+        Saiba mais na nossa <a href="politica-de-privacidade.html">Política de Privacidade</a>.
+      </p>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--ghost-light" id="cookieReject">Rejeitar</button>
+        <button type="button" class="btn btn--gold" id="cookieAccept">Aceitar</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js" defer></script>
