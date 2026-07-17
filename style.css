@@ -1228,11 +1228,30 @@ a:focus-visible, button:focus-visible {
 }
 .cookie-banner a { color: var(--gold); text-decoration: underline; }
 
+.cookie-banner__text--short { display: none; }
+
 .cookie-banner__actions { display: flex; gap: 12px; flex-shrink: 0; }
 .cookie-banner__actions .btn { padding: 10px 20px; font-size: 0.9rem; white-space: nowrap; }
 
 @media (max-width: 600px) {
-  .cookie-banner { left: 12px; right: 12px; padding: 18px; }
-  .cookie-banner__inner { flex-direction: column; align-items: stretch; }
-  .cookie-banner__actions .btn { flex: 1; }
+  .cookie-banner {
+    left: 0;
+    right: 0;
+    bottom: -200px;
+    max-width: none;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    padding: 12px 16px;
+  }
+  .cookie-banner.is-visible { bottom: 0; }
+
+  .cookie-banner__inner { flex-direction: column; align-items: stretch; gap: 10px; }
+
+  .cookie-banner p { flex: none; font-size: 0.78rem; line-height: 1.45; }
+  .cookie-banner__text--full { display: none; }
+  .cookie-banner__text--short { display: inline; }
+
+  .cookie-banner__actions { gap: 8px; }
+  .cookie-banner__actions .btn { flex: 1; padding: 9px 12px; font-size: 0.8rem; }
 }
